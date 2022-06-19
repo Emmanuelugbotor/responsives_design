@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root{
+            --Pink: hsl(322, 100%, 66%);
+            --Pale_Cyan: hsl(193, 100%, 96%);
+            --dark_Cyan: hsl(192, 100%, 9%);
+            --Grayish_Blue: hsl(208, 11%, 55%);
+        }
+        *,*::after,*::before{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+        }
+        ul,ol{
+            list-style: none;
+        }
+        html{
+            font-size:62.5%;
+            
+        }
+        .top_section{
+            background: linear-gradient(to right, rgba(120, 120, 219, 0.171), rgba(120, 120, 219, 0.171)),url("/images/bg-hero-desktop.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            width:100%;
+            min-height: 100vh;
+            padding:2rem 4rem;
+        }
+        .top_section .top{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding:2rem 4rem;
+        }
+        .top_section .logo{
+            width:120px;
+        }
+        .top_section button.try_free{
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding:1rem 3rem;
+            border:none;
+            border-radius: 2rem;
+            box-shadow: 0 10px 10px rgba(0,0,0,.14);
+            width:18rem;
+        }
+        .top_section .bottom{
+            padding:0 4rem;
+            display: flex;
+            align-items: center;
+            margin-top: 3rem;
+            
+        }
+        .top_section .bottom .right{
+            flex: 0 1 60%;
+        }
+        .top_section .bottom .right img{
+            width:100%;
+        }
+        .top_section .bottom .left{
+            flex: 0 1 40%;
+            margin-right: 3rem;
+        }
+        .top_section .bottom .left h1{
+            font-size: 3rem;
+            color:#000;
+            font-weight: 600;
+            max-width: 30rem;
+            width:100%;
+        }
+        .top_section .bottom .left p{
+            max-width: 40rem;
+            width:100%;
+            font-size: 1.6rem;
+            margin-top:2rem;
+            line-height: 25px;
+        }
+        .top_section .bottom .left button{
+            width:20rem;
+            background: var(--Pink);
+            color: #fff;
+            border-radius: 2rem;
+            margin-top:2rem;
+            padding:1.3rem 2rem;
+            border:none;
+        }
+        section.grow{
+            display: flex;
+            align-items: center;
+            border:1px solid #f2f2f2;
+            max-width:120rem;
+            width:100%;
+            margin: 0  auto;
+            margin-top: 8rem;
+            padding:3rem 0;
+            border-radius: 1rem;
+        }
+        section.grow:first-of-type{
+            margin-top: 10rem;
+        }
+       
+        section.grow .right{
+            flex:0 1 45%;
+        }
+        section.grow .right img{
+            width:100%;
+        }
+        section.grow.second .right{
+            margin-left: 10rem;
+        }
+        section.grow .left{
+            flex:0 1 55%;
+            margin-left: 10rem;
+            margin-right: 12rem;
+        }
+        section.grow.second .left{
+            margin-right: 0rem;
+            margin-left: 12rem;
+        }
+        section.grow .left h1{
+            color:#000000;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        section.grow .left p{
+            color:grey;
+            font-size: 1.8rem;
+            line-height: 25px;
+            max-width: 50rem;
+            width:100%;
+        }
+        footer{
+            background-color: var(--dark_Cyan);
+            width:100%;
+            min-height:50vh;
+            margin-top: 15rem;
+            padding-top:14rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        footer .build_comm{
+            position: absolute;
+            width:50rem;
+            height: 20rem;
+            background-color: #fff;
+            left:50%;
+            transform: translateX(-50%);
+            top:-10rem;
+            box-shadow: 0 10px 5px rgba(0,0,0,.14), 0 -5px 10px rgba(0,0,0,.14);  
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 1rem;
+        }
+        footer .build_comm h1{
+            font-size: 2.5rem;
+            color: #000;
+            font-weight: bold;
+        }
+        footer .build_comm button{
+            width:20rem;
+            padding:1.5rem 2rem;
+            border:none;
+            background-color: var(--Pink);
+            color:#fff;
+            border-radius: 2rem;
+            margin-top: 2rem;
+
+        }
+
+        footer .footer_wrapper{
+            align-items: stretch;
+            max-width: 110rem;
+            width:100%;
+            display: flex;
+            flex-direction: column;
+            margin-top:1rem;
+        }
+        footer .footer_wrapper .bottom{
+            display: flex;
+        }
+        footer .footer_wrapper .top{
+            margin-bottom: 1rem;
+            display: flex;
+        }
+        footer .footer_wrapper ul.socials{
+            display: flex;  
+        }
+        footer .footer_wrapper ul.socials li ion-icon{
+            font-size: 3rem;
+            color: #fff;
+        }
+        footer .footer_wrapper ul.socials li:not(:last-child){
+            margin-right:1rem;
+        }
+        footer .footer_wrapper ul.footer_first li{
+            display: flex;
+            color:#fff;
+            max-width:40rem;
+            margin-bottom: 1rem;
+        }
+        footer .footer_wrapper ul.footer_first,
+        footer .footer_wrapper ul.footer_second,
+        footer .footer_wrapper ul.footer_third
+        {
+            margin-right:10rem;
+        }
+        footer .footer_wrapper ul.footer_first li p{
+            font-size: 1.6rem;
+            margin-left:1rem;
+            line-height: 24px;
+        }
+        footer .footer_wrapper ul.footer_first li ion-icon{
+            font-size: 2rem;
+        }
+        footer .footer_wrapper ul.footer_second li,
+        footer .footer_wrapper ul.footer_third li{
+            font-size: 1.6rem;
+            color:#fff;
+            margin-bottom:1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="top_section">
+        <div class="top">
+            <img src="/images/logo.svg" alt="logo_huddle" class="logo">
+            <button class="try_free">Try it free</button>
+        </div>
+        <div class="bottom">
+            <div class="left">
+                <h1>Build the community your fans will love</h1>
+                <p>huddle re-imagines the way we build communities. 
+                You have a voice, but so does your audience. Create connections with your users as you engage in genuine discussion</p>
+                <button class="get_started">Get Started For Free</button>
+            </div>
+            <div class="right">
+                <img src="/images/illustration-mockups.svg" alt="">
+            </div>
+           
+        </div>
+      
+    </div>
+    <section class="grow">
+        <div class="left">
+            <h1>Grow Together</h1>
+        <p>Generate meaningful discussion with your audience and build a strong loyal commuinity. 
+        Think of the insightful conversation you miss out on with a feedback form</p>
+        </div>
+        <div class="right">
+            <img src="/images/illustration-grow-together.svg" alt="grow_together">
+        </div>
+    </section>
+    <section class="grow second">
+        <div class="right">
+            <img src="/images/illustration-your-users.svg" alt="grow_together">
+        </div>
+        <div class="left">
+            <h1>Flowing conversation</h1>
+        <p>You would not paginate a conversation in real life, 
+            so why do it online? Our threads have just in time loading for a more natural flow</p>
+        </div>
+    </section>
+    <section class="grow">
+        <div class="left">
+            <h1>Your Users</h1>
+        <p>It takes no time at all to integrate Huddle with your app's authentication solution. 
+            This means once signed in to your app, your users can start chatting immediately</p>
+        </div>
+        <div class="right">
+            <img src="/images/illustration-your-users.svg" alt="grow_together">
+        </div>
+    </section>
+    <footer>
+        <div class="build_comm">
+            <h1>Ready to build your community</h1>
+            <button>Get Started For Free</button>
+        </div>
+        
+        <div class="footer_wrapper">
+            <div class="top">
+                <img src="/images/logo.svg" alt="logo_huddle" class="logo">
+            </div>
+            <div class="bottom">
+                <ul class="footer_first">
+                    <li>
+                      <ion-icon name="location-outline"></ion-icon>
+                      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio temporibus exercitationem 
+                          repudiandae vitae expedita libero dolorum quod cum obcaecati labore.</p>
+                    </li> 
+                    <li>
+                        <ion-icon name="call-outline"></ion-icon>
+                      <p>+ 514 300 4500</p>
+                    </li>
+                    <li>
+                      <ion-icon name="mail-outline"></ion-icon>
+                      <p>example@huddle.com</p>
+                    </li>
+                  </ul>
+                  <ul class="footer_second">
+                      <li>About Us</li>
+                      <li>What We Do</li>
+                      <li>Faq</li>
+                  </ul>
+                  <ul class="footer_third">
+                      <li>Career</li>
+                      <li>Blog</li>
+                      <li>Contact Us</li>
+                  </ul>
+                  <ul class="socials">
+                      <li><ion-icon name="logo-facebook"></ion-icon></li>
+                      <li><ion-icon name="logo-instagram"></ion-icon></li>
+                      <li><ion-icon name="logo-youtube"></ion-icon></li>
+                  </ul>
+            </div>
+
+        </div>
+      
+       
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
